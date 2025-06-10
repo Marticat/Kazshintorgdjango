@@ -1,0 +1,78 @@
+
+{% extends 'tires/base.html' %}
+{% load static %}
+
+{% block title %}Блог | КазШинТорг{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="section-title">Наш блог</h2>
+  <div class="blog-grid">
+    <div class="blog-card">
+      <img src="{% static 'tires/images/tyre1.jpg' %}" alt="Шина">
+      <div class="blog-content">
+        <div class="blhttps://github.com/Marticat/Kazshintorgdjangoog-date">01.01.2024</div>
+        <div class="blog-title">Что лучше, всесезонная или сезонная шина?</div>
+      </div>
+      <div class="blog-footer">
+        <a href="#">›</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="{% static 'tires/images/tyre2.jpg' %}" alt="Шина">
+      <div class="blog-content">
+        <div class="blog-date">01.01.2024</div>
+        <div class="blog-title">Маркировка шин: HT, AT, MT — что это?</div>
+      </div>
+      <div class="blog-footer">
+        <a href="#">›</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="{% static 'tires/images/speedindex.jpg' %}" alt="Индекс скорости">
+      <div class="blog-content">
+        <div class="blog-date">01.01.2024</div>
+        <div class="blog-title">Таблица индексов скорости и нагрузки шин.</div>
+      </div>
+      <div class="blog-footer">
+        <a href="#">›</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="{% static 'tires/images/tyre1.jpg' %}" alt="Шина">
+      <div class="blog-content">
+        <div class="blog-date">01.01.2024</div>
+        <div class="blog-title">Что лучше, всесезонная или сезонная шина?</div>
+      </div>
+      <div class="blog-footer">
+        <a href="#">›</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="{% static 'tires/images/tyre2.jpg' %}" alt="Шина">
+      <div class="blog-content">
+        <div class="blog-date">01.01.2024</div>
+        <div class="blog-title">Маркировка шин: HT, AT, MT — что это?</div>
+      </div>
+      <div class="blog-footer">
+        <a href="#">›</a>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="{% static 'tires/images/speedindex.jpg' %}" alt="Индекс скорости">
+      <div class="blog-content">
+        <div class="blog-date">01.01.2024</div>
+        <div class="blog-title">Таблица индексов скорости и нагрузки шин.</div>
+      </div>
+      <div class="blog-footer">
+        <a href="#">›</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

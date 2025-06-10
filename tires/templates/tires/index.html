@@ -1,0 +1,36 @@
+
+{% extends 'tires/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row align-items-center g-4">
+    <div class="col-md-6">
+      <img src="{% static 'tires/images/building.png' %}" alt="Здание КазШинТорг" class="hero-img" />
+    </div>
+    <div class="col-md-6">
+      <div class="section-title">О компании</div>
+      <p class="section-text">
+        Основным направлением деятельности нашей компании является поставка и реализация автошин, именно этим направлением занимается ТД «КазШинТорг».<br><br>
+        Шинная продукция, поставляемая ТД «КазШинТорг», доступна для населения со средним уровнем доходов, за счет поставки недорогого сегмента шин, пользующихся наибольшим спросом у населения.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row align-items-center g-4">
+    <div class="col-md-6 order-md-1 order-2">
+      <div class="section-title">Triangle Tyre Co. Ltd</div>
+      <p class="section-text">
+        В январе 2012 года начались контракты и партнёрские отношения между ТД «КазШинТорг» и TRIANGLE TYRE CO. LTD. К концу 2012 года было реализовано более 45 тыс. единиц продукции TRIANGLE. К 2014 году — уже более 100 тыс., а в 2016 — более 140 тыс. единиц.<br><br>
+        За первые 6 месяцев 2017 года было реализовано свыше 95 тыс. единиц продукции, что подтверждает устойчивую положительную динамику.<br><br>
+        Сегодня продукция «TRIANGLE» занимает достойное место на рынке Казахстана, а ТД «КазШинТорг» и его филиалы известны как надёжные поставщики.
+      </p>
+    </div>
+    <div class="col-md-6 order-md-2 order-1">
+      <img src="{% static 'tires/images/tyre.png' %}" alt="Шина Triangle" class="hero-img" />
+    </div>
+  </div>
+</div>
+{% endblock %}
