@@ -14,3 +14,5 @@ def blog(request):
     return render(request, 'tires/blog.html')
 def details(request):
     return render(request, 'tires/details.html')
+def calculator(request):
+    return render(request, 'tires/calculator.html')
