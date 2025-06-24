@@ -1,0 +1,854 @@
+
+{% extends 'tires/base.html' %}
+{% load static %}
+
+{% block content %}
+        <div class="page">
+            <div class="main-slider swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <section class="main">
+        <div class="main__container _container">
+          <div class="main__body">
+            <h1 class="main__title" style="max-width: 615px;">Бесплатная доставка по Алматы</h1>
+            <div class="main__text" style="max-width: 100%;">Оперативная доставка шин по городу Алматы</div>
+            <a href="https://kaz-shin.abcsup.kz/pokupatelyu" class="main__button">Узнать подробнее</a>
+            <div class="main__image">
+              <img src="/storage/app/media/slider/1.jpg" alt="Image">
+            </div>
+            <div class="main__arrows">
+              <div class="main__arrow main__prev">
+                <img src="/storage/app/media/prev.svg" alt="Image">
+              </div>
+              <div class="main__arrow main__next">
+                <img src="/storage/app/media/next.svg" alt="Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="swiper-slide">
+      <section class="main">
+        <div class="main__container _container">
+          <div class="main__body">
+            <div class="main__title" style="color: #151515;">Шины в кредит и&nbsp;рассрочку</div>
+            <div class="main__text" style="color: #444;">Выгодная рассрочка от Kaspi KZ</div>
+            <a href="https://kaz-shin.abcsup.kz/akcii/kupit-shiny-v-rassrochku-s-kaspi-red" class="main__button">Узнать подробнее</a>
+            <div class="main__image">
+              <img src="/storage/app/media/slider/2.jpg" alt="Image">
+            </div>
+            <div class="main__arrows">
+              <div class="main__arrow main__prev">
+                <img src="/storage/app/media/prev.svg" alt="Image">
+              </div>
+              <div class="main__arrow main__next">
+                <img src="/storage/app/media/next.svg" alt="Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="swiper-slide">
+      <section class="main">
+        <div class="main__container _container">
+          <div class="main__body">
+            <div class="main__title">Хранение шин в&nbsp;Алматы</div>
+            <div class="main__text">Услуги сезонного хранения автошин в Алматы. Нажмите, чтобы узнать подробнее!</div>
+            <a href="/pokupatelyu?v=hraneie" class="main__button">Узнать подробнее</a>
+            <div class="main__image">
+              <img src="/storage/app/media/slider/3.jpg" alt="Image">
+            </div>
+            <div class="main__arrows">
+              <div class="main__arrow main__prev">
+                <img src="/storage/app/media/prev.svg" alt="Image">
+              </div>
+              <div class="main__arrow main__next">
+                <img src="/storage/app/media/next.svg" alt="Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="swiper-slide">
+      <section class="main">
+        <div class="main__container _container">
+          <div class="main__body">
+            <div class="main__title">Получите скидку до&nbsp;10%</div>
+            <div class="main__text" style="max-width: 100%;">При покупке шин в нашем магазине!</div>
+            <div class="main__image">
+              <img src="/storage/app/media/slider/4.jpg" alt="Image">
+            </div>
+            <div class="main__arrows">
+              <div class="main__arrow main__prev">
+                <img src="/storage/app/media/prev.svg" alt="Image">
+              </div>
+              <div class="main__arrow main__next">
+                <img src="/storage/app/media/next.svg" alt="Image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<section class="ins">
+  <div class="ins__container _container">
+    <div class="ins__body">
+      <form method="GET" action="/katalog/legkovye-shiny" class="podbor">
+        <div class="podbor__title">Подбор шин по параметрам:</div>
+        <div class="podbor__items">
+          <div class="podbor__item">
+            <label for="width" class="podbor__label">Ширина:</label>
+            <select name="width" id="width">
+              <option value="" selected>Все</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                            <option value="33">33</option>
+                            <option value="155">155</option>
+                            <option value="165">165</option>
+                            <option value="175">175</option>
+                            <option value="185">185</option>
+                            <option value="195">195</option>
+                            <option value="205">205</option>
+                            <option value="215">215</option>
+                            <option value="225">225</option>
+                            <option value="235">235</option>
+                            <option value="245">245</option>
+                            <option value="255">255</option>
+                            <option value="265">265</option>
+                            <option value="275">275</option>
+                            <option value="285">285</option>
+                            <option value="295">295</option>
+                            <option value="315">315</option>
+                          </select>
+          </div>
+          <div class="podbor__item">
+            <label for="height" class="podbor__label">Высота:</label>
+            <select name="height" id="height">
+              <option value="" selected>Все</option>
+                                                                      <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="13">13</option>
+                                                        <option value="35">35</option>
+                                                        <option value="40">40</option>
+                                                        <option value="45">45</option>
+                                                        <option value="50">50</option>
+                                                        <option value="55">55</option>
+                                                        <option value="60">60</option>
+                                                        <option value="65">65</option>
+                                                        <option value="70">70</option>
+                                                        <option value="75">75</option>
+                                        </select>
+          </div>
+          <div class="podbor__item">
+            <label for="diametr" class="podbor__label">Диаметр:</label>
+            <select name="diametr" id="diametr">
+              <option value="" selected>Все</option>
+                            <option value="12">12</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                          </select>
+          </div>
+          <div class="podbor__item">
+            <label for="season" class="podbor__label">Сезоны:</label>
+            <select name="season[]" id="season">
+                            <option value="letnie" >летние</option>
+                            <option value="vsesezonnye" >всесезонные</option>
+                            <option value="zimnie" >зимние</option>
+                          </select>
+          </div>
+          <button class="podbor__button">Подобрать</button>
+        </div>
+        <div class="podbor__image">
+          <img src="https://kazshintorg1.kz/themes/demo/assets/images/podbor.png" alt="Image">
+        </div>
+      </form>
+      <form method="GET" action="/shinnyj-kalkulyator" class="shin">
+        <div class="shin__name">Шинный калькулятор:</div>
+        <div class="shin__body">
+          <div class="shin__title">Старый типоразмер:</div>
+          <div class="shin__selects">
+            <div class="shin__select">
+              <select id="input1" name="input1">
+                <option value="145">145</option>
+                <option value="155">155</option>
+                <option value="165">165</option>
+                <option value="175" selected>175</option>
+                <option value="185">185</option>
+                <option value="195">195</option>
+                <option value="205">205</option>
+                <option value="215">215</option>
+                <option value="225">225</option>
+                <option value="235">235</option>
+                <option value="245">245</option>
+                <option value="255">255</option>
+                <option value="265">265</option>
+                <option value="275">275</option>
+                <option value="285">285</option>
+                <option value="295">295</option>
+                <option value="305">305</option>
+                <option value="315">315</option>
+                <option value="325">325</option>
+              </select>
+            </div>
+            <div class="shin__select">
+              <select id="input2" name="input2">
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+                <option value="60">60</option>
+                <option value="65">65</option>
+                <option value="70" selected>70</option>
+                <option value="75">75</option>
+                <option value="80">80</option>
+                <option value="85">85</option>
+                <option value="90">90</option>
+              </select>
+            </div>
+            <div class="shin__select">
+              <select id="input3" name="input3">
+                <option value="12">R12</option>
+                <option value="13" selected>R13</option>
+                <option value="14">R14</option>
+                <option value="15">R15</option>
+                <option value="16">R16</option>
+                <option value="17">R17</option>
+                <option value="18">R18</option>
+                <option value="19">R19</option>
+                <option value="20">R20</option>
+                <option value="21">R21</option>
+                <option value="22">R22</option>
+              </select>
+            </div>
+          </div>
+          <div class="shin__title shin__title-2">Новый типоразмер:</div>
+          <div class="shin__selects">
+            <div class="shin__select">
+              <select id="old-input1" name="old-input1">
+                <option value="145">145</option>
+                <option value="155">155</option>
+                <option value="165">165</option>
+                <option value="175" selected>175</option>
+                <option value="185">185</option>
+                <option value="195">195</option>
+                <option value="205">205</option>
+                <option value="215">215</option>
+                <option value="225">225</option>
+                <option value="235">235</option>
+                <option value="245">245</option>
+                <option value="255">255</option>
+                <option value="265">265</option>
+                <option value="275">275</option>
+                <option value="285">285</option>
+                <option value="295">295</option>
+                <option value="305">305</option>
+                <option value="315">315</option>
+                <option value="325">325</option>
+              </select>
+            </div>
+            <div class="shin__select">
+              <select id="old-input2" name="old-input2">
+                <option value="30">30</option>
+                <option value="31">31</option>
+                <option value="32">32</option>
+                <option value="33">33</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+                <option value="60">60</option>
+                <option value="65">65</option>
+                <option value="70" selected>70</option>
+                <option value="75">75</option>
+                <option value="80">80</option>
+                <option value="85">85</option>
+                <option value="90">90</option>
+              </select>
+            </div>
+            <div class="shin__select">
+              <select id="old-input3" name="old-input3">
+                <option value="12">R12</option>
+                <option value="13" selected>R13</option>
+                <option value="14">R14</option>
+                <option value="15">R15</option>
+                <option value="16">R16</option>
+                <option value="17">R17</option>
+                <option value="18">R18</option>
+                <option value="19">R19</option>
+                <option value="20">R20</option>
+                <option value="21">R21</option>
+                <option value="22">R22</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button class="shin__button">Показать результат</button>
+        <div class="shin__image">
+          <img src="https://kazshintorg1.kz/themes/demo/assets/images/shin.png" alt="Image">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="catalog">
+  <div class="catalog__container _container">
+    <div class="catalog__title title">Каталог товаров</div>
+    <div class="catalog__items">
+            <a href="https://kazshintorg1.kz/katalog/legkovye-shiny" class="catalog__item item-catalog">
+        <div class="item-catalog__image">
+          <img src="/storage/app/media/catalog/categories/1.jpg" alt="Image">
+        </div>
+        <div class="item-catalog__content">
+          <div class="item-catalog__title">Легковые шины</div>
+          <div class="item-catalog__button">
+            <svg width="43" height="42" viewBox="0 0 43 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="21.2838" cy="20.9785" r="20.8072" fill="#D9251C" />
+              <path d="M18.8527 13.7494L26.0817 20.9784L18.8527 28.2074" stroke="white" stroke-width="3" />
+            </svg>
+          </div>
+        </div>
+      </a>
+            <a href="https://kazshintorg1.kz/katalog/kommercheskie-shiny" class="catalog__item item-catalog">
+        <div class="item-catalog__image">
+          <img src="/storage/app/media/catalog/categories/2.jpg" alt="Image">
+        </div>
+        <div class="item-catalog__content">
+          <div class="item-catalog__title">Коммерческие шины</div>
+          <div class="item-catalog__button">
+            <svg width="43" height="42" viewBox="0 0 43 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="21.2838" cy="20.9785" r="20.8072" fill="#D9251C" />
+              <path d="M18.8527 13.7494L26.0817 20.9784L18.8527 28.2074" stroke="white" stroke-width="3" />
+            </svg>
+          </div>
+        </div>
+      </a>
+            <a href="https://kazshintorg1.kz/katalog/diski" class="catalog__item item-catalog">
+        <div class="item-catalog__image">
+          <img src="/storage/app/media/catalog/categories/6.jpg" alt="Image">
+        </div>
+        <div class="item-catalog__content">
+          <div class="item-catalog__title">Диски</div>
+          <div class="item-catalog__button">
+            <svg width="43" height="42" viewBox="0 0 43 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="21.2838" cy="20.9785" r="20.8072" fill="#D9251C" />
+              <path d="M18.8527 13.7494L26.0817 20.9784L18.8527 28.2074" stroke="white" stroke-width="3" />
+            </svg>
+          </div>
+        </div>
+      </a>
+          </div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="products__container _container">
+    <div class="products__top">
+      <div class="products__title title">Популярные предложения</div>
+      <div class="products__right">
+        <a href="https://kazshintorg1.kz/katalog/default" class="products__button">Смотреть все</a>
+        <div class="products__arrows">
+          <div class="products__arrow products__prev products__prev1">
+            <svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.107422" y="0.191162" width="46.1941" height="36.5559" rx="4" fill="#D9251C" />
+              <path d="M26.792 11.8679L19.6153 19.0446L26.792 26.2213" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="products__arrow products__next products__next1">
+            <svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="46.1941" height="36.5559" rx="4" transform="matrix(-1 0 0 1 47 0.191162)" fill="#D9251C" />
+              <path d="M20.3154 11.8679L27.4921 19.0446L20.3154 26.2213" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="products__items products__items1 swiper">
+      <div class="swiper-wrapper">
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/19555r15-winter-defender-uhp" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/uhp.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">195/55R15 WINTER DEFENDER UHP</div>
+            <div class="product__price">
+                            25500 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/20560r16-mk668" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/mk668.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">205/60R16 MK668</div>
+            <div class="product__price">
+                            24600 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/21555r17-ship-winter-defender-grip-2" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/grip2.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">215/55R17 шип WINTER DEFENDER GRIP 2</div>
+            <div class="product__price">
+                            48800 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/21560r16-winter-defender-ice-i-15" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/i-15.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">215/60R16  WINTER DEFENDER Ice I-15</div>
+            <div class="product__price">
+                            31200 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/22560r17-frd79" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/frd79.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">225/60R17 FRD79</div>
+            <div class="product__price">
+                            31300 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/23545r19-frd866" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/frd866.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">235/45R19 FRD866</div>
+            <div class="product__price">
+                            37800 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/23575r15-frd66" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/frd66-1.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">235/75R15 FRD66</div>
+            <div class="product__price">
+                            37300 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/24540r18-mk927" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/mk927.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">245/40R18 MK927</div>
+            <div class="product__price">
+                            29200 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/25545r18-frd26" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/frd26.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">255/45R18 FRD26</div>
+            <div class="product__price">
+                            35400 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/331250r17lt-mk878-rt" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/mk878.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">33×12.50R17LT MK878 R/T</div>
+            <div class="product__price">
+                            81600 тг
+            </div>
+          </a>
+        </div>
+              </div>
+    </div>
+    <div class="products__pagination products__pagination1"></div>
+  </div>
+</section>
+
+<section class="products">
+  <div class="products__container _container">
+    <div class="products__top">
+      <div class="products__title title">Новинки</div>
+      <div class="products__right">
+        <a href="https://kazshintorg1.kz/katalog/default" class="products__button">Смотреть все</a>
+        <div class="products__arrows">
+          <div class="products__arrow products__prev products__prev2">
+            <svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.107422" y="0.191162" width="46.1941" height="36.5559" rx="4" fill="#D9251C" />
+              <path d="M26.792 11.8679L19.6153 19.0446L26.792 26.2213" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="products__arrow products__next products__next2">
+            <svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="46.1941" height="36.5559" rx="4" transform="matrix(-1 0 0 1 47 0.191162)" fill="#D9251C" />
+              <path d="M20.3154 11.8679L27.4921 19.0446L20.3154 26.2213" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="products__items products__items2 swiper">
+      <div class="swiper-wrapper">
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/18565r14-nova-force-gp" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/gp.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">185/65R14 NOVA-FORCE GP</div>
+            <div class="product__price">
+                            20600 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/19555r15-winter-defender-uhp" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/uhp.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">195/55R15 WINTER DEFENDER UHP</div>
+            <div class="product__price">
+                            25500 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/20545r16-frd26" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/frd26.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">205/45R16 FRD26</div>
+            <div class="product__price">
+                            22900 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/20570r15-winter-defender-ice-i-15-suv" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/i-15.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">205/70R15 WINTER DEFENDER Ice I-15 SUV</div>
+            <div class="product__price">
+                            28400 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/21555r18-frd66" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/frd66-1.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">215/55R18 FRD66</div>
+            <div class="product__price">
+                            33900 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/22540r18-frd76" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/frd76.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">225/40R18 FRD76</div>
+            <div class="product__price">
+                            26900 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/22545r18-igreen-all-season-95v" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/igreenas.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">225/45R18 iGREEN All Season 95V</div>
+            <div class="product__price">
+                            34900 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/23535r20-frd26" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/frd26.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">235/35R20 FRD26</div>
+            <div class="product__price">
+                            32800 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/24570r16lt-mk877" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/mk877.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">245/70R16LT MK877</div>
+            <div class="product__price">
+                            55100 тг
+            </div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/product/25560r18-nova-force-cs" class="products__item product">
+            <div class="product__image">
+              <img src="/storage/app/media/product/nfcs.jpg" alt="Image">
+                          </div>
+            <div class="product__category">Легковые шины</div>
+            <div class="product__title">255/60R18 NOVA-FORCE C/S</div>
+            <div class="product__price">
+                            45800 тг
+            </div>
+          </a>
+        </div>
+              </div>
+    </div>
+    <div class="products__pagination products__pagination2"></div>
+  </div>
+</section>
+
+<section class="akcii">
+  <div class="akcii__container _container">
+    <div class="akcii__title title">Акции, скидки</div>
+    <div class="akcii__items">
+    	      <a href="https://kazshintorg1.kz/akcii/podarochnyj-sertifikat-kazshintorg" class="akcii__item item-akcii">
+        <div class="item-akcii__image">
+          <img src="/storage/app/media/1-1.jpg" alt="Image">
+        </div>
+        <div class="item-akcii__bottom">
+          <div class="item-akcii__title">Подарочный сертификат КазШинТорг</div>
+          <div class="item-akcii__arrow">
+            <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26.179" cy="26.4648" r="22.9452" fill="#D9251C" stroke="white" stroke-width="5.89041" />
+              <path
+                d="M21.6622 30.1454C21.3402 30.4674 21.3402 30.9896 21.6622 31.3116C21.9843 31.6337 22.5064 31.6337 22.8285 31.3116L21.6622 30.1454ZM30.7027 23.0959C30.7027 22.6404 30.3335 22.2712 29.878 22.2712L22.4561 22.2712C22.0006 22.2712 21.6314 22.6404 21.6314 23.0959C21.6314 23.5513 22.0006 23.9205 22.4561 23.9205L29.0533 23.9205L29.0533 30.5178C29.0533 30.9732 29.4226 31.3424 29.878 31.3424C30.3335 31.3424 30.7027 30.9732 30.7027 30.5178L30.7027 23.0959ZM22.8285 31.3116L30.4611 23.679L29.2949 22.5128L21.6622 30.1454L22.8285 31.3116Z"
+                fill="white" />
+            </svg>
+          </div>
+        </div>
+      </a>
+            <a href="https://kazshintorg1.kz/akcii/kupit-shiny-v-rassrochku-s-kaspi-red" class="akcii__item item-akcii">
+        <div class="item-akcii__image">
+          <img src="/storage/app/media/2-1.jpg" alt="Image">
+        </div>
+        <div class="item-akcii__bottom">
+          <div class="item-akcii__title">Купить шины в рассрочку с Kaspi Red</div>
+          <div class="item-akcii__arrow">
+            <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="26.179" cy="26.4648" r="22.9452" fill="#D9251C" stroke="white" stroke-width="5.89041" />
+              <path
+                d="M21.6622 30.1454C21.3402 30.4674 21.3402 30.9896 21.6622 31.3116C21.9843 31.6337 22.5064 31.6337 22.8285 31.3116L21.6622 30.1454ZM30.7027 23.0959C30.7027 22.6404 30.3335 22.2712 29.878 22.2712L22.4561 22.2712C22.0006 22.2712 21.6314 22.6404 21.6314 23.0959C21.6314 23.5513 22.0006 23.9205 22.4561 23.9205L29.0533 23.9205L29.0533 30.5178C29.0533 30.9732 29.4226 31.3424 29.878 31.3424C30.3335 31.3424 30.7027 30.9732 30.7027 30.5178L30.7027 23.0959ZM22.8285 31.3116L30.4611 23.679L29.2949 22.5128L21.6622 30.1454L22.8285 31.3116Z"
+                fill="white" />
+            </svg>
+          </div>
+        </div>
+      </a>
+          </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="block__container _container">
+    <div class="block__body">
+      <div class="block__image">
+        <img src="/storage/app/media/home/about.jpg" alt="Image">
+      </div>
+      <div class="block__content">
+        <div class="block__title title">О компании</div>
+        <div class="block__text"><p>ТД «КазШинТорг» присутствует на рынке Казахстана с 1996 года. Компания имеет широкий спектр деятельности по оказанию услуг автовладельцам г. Алматы. Нам принадлежит сеть комплексов включающих в себя станцию тех обслуживания автомашин, автомойки, вулканизации и другие виды услуг.</p>
+
+<p>Наш комплекс оснащен современнейшим оборудованием, благодаря которому мы предоставляем высококачественные услуги для автолюбителей города, начиная от мойки автомашин и заканчивая сезонным хранением автошин.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="advantages">
+  <div class="advantages__container _container">
+    <div class="advantages__title title">Наши преимущества</div>
+    <div class="advantages__items">
+            <div class="advantages__item advantage">
+        <div class="advantage__image">
+          <img src="/storage/app/media/home/advantage.svg" alt="Image">
+        </div>
+        <div class="advantage__content">
+          <div class="advantage__title">Опыт и надежность</div>
+          <div class="advantage__text">С 1996 года мы предоставляем качественные услуги автовладельцам Алматы. Долгие годы работы – гарантия нашего профессионализма.</div>
+        </div>
+      </div>
+            <div class="advantages__item advantage">
+        <div class="advantage__image">
+          <img src="/storage/app/media/home/advantage.svg" alt="Image">
+        </div>
+        <div class="advantage__content">
+          <div class="advantage__title">Комплексный сервис</div>
+          <div class="advantage__text">Все услуги для авто в одном месте: техобслуживание, мойка, вулканизация и хранение шин. Вам не нужно искать разные сервисы – мы решаем все задачи.</div>
+        </div>
+      </div>
+            <div class="advantages__item advantage">
+        <div class="advantage__image">
+          <img src="/storage/app/media/home/advantage.svg" alt="Image">
+        </div>
+        <div class="advantage__content">
+          <div class="advantage__title">Современные технологии</div>
+          <div class="advantage__text">Наш комплекс оснащен новейшим оборудованием, что позволяет предоставлять услуги быстро, качественно и с максимальным комфортом для клиентов.</div>
+        </div>
+      </div>
+          </div>
+  </div>
+</section>
+
+<section class="blog">
+  <div class="blog__container _container">
+    <div class="blog__top">
+      <div class="blog__title title">Наш блог</div>
+      <div class="blog__right">
+        <a href="https://kazshintorg1.kz/blog" class="blog__button">Смотреть все</a>
+        <div class="blog__arrows">
+          <div class="blog__arrow blog__prev">
+            <svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0.107422" y="0.191162" width="46.1941" height="36.5559" rx="4" fill="#D9251C" />
+              <path d="M26.792 11.8679L19.6153 19.0446L26.792 26.2213" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+          <div class="blog__arrow blog__next">
+            <svg width="47" height="37" viewBox="0 0 47 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="46.1941" height="36.5559" rx="4" transform="matrix(-1 0 0 1 47 0.191162)" fill="#D9251C" />
+              <path d="M20.3154 11.8679L27.4921 19.0446L20.3154 26.2213" stroke="white" stroke-width="2" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="blog__items swiper">
+      <div class="swiper-wrapper">
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/blog/shiny-farroad" class="blog__item item-blog">
+            <div class="item-blog__image">
+              <img style="object-fit: contain;"
+                src="https://kazshintorg1.kz/storage/app/uploads/public/67d/27c/32b/67d27c32b2c76998628967.jpg" alt="Image">
+              <div class="item-blog__arrow">
+                <svg width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8.13477" y="8.10059" width="57.4575" height="55.6315" rx="27.8157" fill="#D10F49"
+                    stroke="white" stroke-width="15" />
+                  <path
+                    d="M30.1688 41.4432C29.8468 41.7653 29.8468 42.2874 30.1688 42.6095C30.4909 42.9315 31.013 42.9315 31.3351 42.6095L30.1688 41.4432ZM43.7973 29.8057C43.7973 29.3502 43.4281 28.981 42.9726 28.981L35.5507 28.981C35.0953 28.981 34.7261 29.3502 34.7261 29.8057C34.7261 30.2611 35.0953 30.6303 35.5507 30.6303L42.148 30.6303L42.148 37.2276C42.148 37.683 42.5172 38.0523 42.9726 38.0523C43.4281 38.0523 43.7973 37.683 43.7973 37.2276L43.7973 29.8057ZM31.3351 42.6095L43.5558 30.3888L42.3895 29.2226L30.1688 41.4432L31.3351 42.6095Z"
+                    fill="white" />
+                </svg>
+              </div>
+            </div>
+            <div class="item-blog__date">13.03.2025</div>
+            <div class="item-blog__title">Шины Farroad</div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/blog/shiny-mileking" class="blog__item item-blog">
+            <div class="item-blog__image">
+              <img style="object-fit: contain;"
+                src="https://kazshintorg1.kz/storage/app/uploads/public/67c/fbe/385/67cfbe3853c1d003082878.jpg" alt="Image">
+              <div class="item-blog__arrow">
+                <svg width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8.13477" y="8.10059" width="57.4575" height="55.6315" rx="27.8157" fill="#D10F49"
+                    stroke="white" stroke-width="15" />
+                  <path
+                    d="M30.1688 41.4432C29.8468 41.7653 29.8468 42.2874 30.1688 42.6095C30.4909 42.9315 31.013 42.9315 31.3351 42.6095L30.1688 41.4432ZM43.7973 29.8057C43.7973 29.3502 43.4281 28.981 42.9726 28.981L35.5507 28.981C35.0953 28.981 34.7261 29.3502 34.7261 29.8057C34.7261 30.2611 35.0953 30.6303 35.5507 30.6303L42.148 30.6303L42.148 37.2276C42.148 37.683 42.5172 38.0523 42.9726 38.0523C43.4281 38.0523 43.7973 37.683 43.7973 37.2276L43.7973 29.8057ZM31.3351 42.6095L43.5558 30.3888L42.3895 29.2226L30.1688 41.4432L31.3351 42.6095Z"
+                    fill="white" />
+                </svg>
+              </div>
+            </div>
+            <div class="item-blog__date">11.03.2025</div>
+            <div class="item-blog__title">Шины Mileking</div>
+          </a>
+        </div>
+                <div class="swiper-slide">
+          <a href="https://kazshintorg1.kz/blog/shiny-leao" class="blog__item item-blog">
+            <div class="item-blog__image">
+              <img style="object-fit: contain;"
+                src="https://kazshintorg1.kz/storage/app/uploads/public/67c/fbb/45e/67cfbb45e4b26397634672.png" alt="Image">
+              <div class="item-blog__arrow">
+                <svg width="74" height="72" viewBox="0 0 74 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="8.13477" y="8.10059" width="57.4575" height="55.6315" rx="27.8157" fill="#D10F49"
+                    stroke="white" stroke-width="15" />
+                  <path
+                    d="M30.1688 41.4432C29.8468 41.7653 29.8468 42.2874 30.1688 42.6095C30.4909 42.9315 31.013 42.9315 31.3351 42.6095L30.1688 41.4432ZM43.7973 29.8057C43.7973 29.3502 43.4281 28.981 42.9726 28.981L35.5507 28.981C35.0953 28.981 34.7261 29.3502 34.7261 29.8057C34.7261 30.2611 35.0953 30.6303 35.5507 30.6303L42.148 30.6303L42.148 37.2276C42.148 37.683 42.5172 38.0523 42.9726 38.0523C43.4281 38.0523 43.7973 37.683 43.7973 37.2276L43.7973 29.8057ZM31.3351 42.6095L43.5558 30.3888L42.3895 29.2226L30.1688 41.4432L31.3351 42.6095Z"
+                    fill="white" />
+                </svg>
+              </div>
+            </div>
+            <div class="item-blog__date">11.03.2025</div>
+            <div class="item-blog__title">Шины Leao</div>
+          </a>
+        </div>
+              </div>
+    </div>
+    <div class="blog__pagination"></div>
+  </div>
+</section>
+
+<section></section>        </div>
+
+        <!-- Scripts -->
+        <script src="https://kazshintorg1.kz/themes/demo/assets/vendor/jquery.js"></script>
+<script src="https://kazshintorg1.kz/themes/demo/assets/vendor/bootstrap.js"></script>
+<script src="https://kazshintorg1.kz/themes/demo/assets/js/libs/jquery.maskedinput.js"></script>
+<script src="https://kazshintorg1.kz/themes/demo/assets/js/libs/swiper-bundle.min.js"></script>
+<script src="https://kazshintorg1.kz/themes/demo/assets/js/libs/fancybox.umd.js"></script>
+<script src="https://kazshintorg1.kz/themes/demo/assets/js/cart-localstorage.min.js"></script>
+<script src="https://kazshintorg1.kz/combine/ae9a0975de109f10e667d468a5db84b9-1743846882"></script>
+<script src="https://kazshintorg1.kz/combine/67f56763633aae2d20651c01fbb4b9d8-1742034314"></script>        <script src="/modules/system/assets/js/framework.js"></script>
+<script src="/modules/system/assets/js/framework.extras.js"></script>
+<link rel="stylesheet" property="stylesheet" href="/modules/system/assets/css/framework.extras.css">
+{% endblock %}

@@ -1,0 +1,17 @@
+
+{% extends 'tires/base.html' %}
+{% load static %}
+
+{% block title %}Контакты | КазШинТорг{% endblock %}
+
+{% block content %}
+<h1>Каталог шин</h1>
+<ul>
+  {% for tire in tires %}
+    <li>
+      {{ tire.brand }} — {{ tire.width }}/{{ tire.height }} R{{ tire.diameter }},
+      {{ tire.get_season_display }} — {{ tire.price }} ₸
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}

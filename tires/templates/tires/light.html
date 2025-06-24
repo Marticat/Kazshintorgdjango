@@ -1,0 +1,31 @@
+
+{% extends 'tires/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Легковые шины</h1>
+
+<p>Найдено шин: {{ tires|length }}</p>
+
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+  {% for tire in tires %}
+    <div style="border: 1px solid #ccc; padding: 10px;">
+        {% if tire.image %}
+          <img src="{{ tire.image.url }}" alt="{{ tire }}" style="max-width: 100%;">
+        {% else %}
+          <p>[нет фото]</p>
+        {% endif %}
+      <h3>{{ tire.brand }}</h3>
+      <p>{{ tire.width }}/{{ tire.height }} R{{ tire.diameter }}</p>
+      <p>Сезон: {{ tire.get_season_display }}</p>
+      <p>Цена: {{ tire.price }} ₸</p>
+    </div>
+  {% endfor %}
+</div>
+
+{% if not tires %}
+  <p>Нет шин в этой категории.</p>
+{% endif %}
+
+{% endblock %}
