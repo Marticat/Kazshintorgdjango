@@ -1,87 +1,154 @@
-
-
 {% extends 'tires/base.html' %}
 {% load static %}
 
-{% block title %}Блог | КазШинТорг{% endblock %}
+{% block title %}Оформление заказа | КазШинТорг{% endblock %}
 
 {% block content %}
-        <div class="page">
-            <p></p>
+<div class="page" xmlns="">
+  <div class="g-form__preloader">
+    <div class="g-form__preloader_content"></div>
+  </div>
 
-<div class="g-form__preloader">
-	<div class="g-form__preloader_content"></div>
+  <section class="cart-page">
+    <div class="cart-page__container _container">
+      <h1 class="cart-page__title title">Оформление заказа</h1>
+
+      <div class="cart-page__body active">
+        <div class="cart-page__left" id="formOrder">
+          <form class="cart-page__inputs" method="post" action="{% url 'place_order' %}" onsubmit="return attachCartItems(this);" autocomplete="off">
+
+            {% csrf_token %}
+            <div class="cart-page__input">
+              <input type="text" name="fio" placeholder="ФИО" required>
+            </div>
+            <div class="cart-page__input">
+              <input type="tel" name="phone" placeholder="+7 ()" required>
+            </div>
+            <div class="cart-page__input">
+              <input type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="cart-page__input">
+              <textarea name="comment" placeholder="Комментарий"></textarea>
+            </div>
+            <input type="hidden" name="items_json" id="items_json">
+            <button type="submit" class="cart-page__button">Оформить</button>
+          </form>
+        </div>
+
+        <div class="cart-page__content">
+          <div class="cart-page__items" id="cartItemsContainer">
+
+          </div>
+
+          <button class="cart-page__destroy" onclick="cartLS.destroy()">Очистить корзину</button>
+          <table id="totals" class="table">
+            <tbody>
+              <tr class="subtotal">
+                <td class="name subtotal"><strong>Количество:</strong></td>
+                <td class="tcount"><span></span> шт</td>
+              </tr>
+              <tr class="subtotal">
+                <td class="name subtotal"><strong>Позиций:</strong></td>
+                <td class="tpos"></td>
+              </tr>
+              <tr class="subtotal">
+                <td class="name subtotal"><strong>Итого:</strong></td>
+                <td class="price"><span></span> ₸</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="order-success">Ваш заказ оформлен</div>
+      <div class="order-empty">В корзине нет товаров.</div>
+    </div>
+  </section>
 </div>
-<section class="cart-page">
-	<div class="cart-page__container _container">
-		<h1 class="cart-page__title title">
-			Оформление заказа
-		</h1>
 
-		<div class="cart-page__body active">
-			<div class="cart-page__left" id="formOrder">
-					<form  class="cart-page__inputs" data-request="formOrder::onFormSubmit" autocomplete="off">
-					<input name="_token" type="hidden" value="dP1LDdfhlBq3iaaZISc5I7Gpz3UGOOrBwAjt7AJW">
-					<div class="cart-page__input">
-						<input type="text" name="fio" placeholder="ФИО" required>
-					</div>
-					<div class="cart-page__input">
-						<input type="tel" name="phone" placeholder="+7 ()" required>
-					</div>
-					<div class="cart-page__input">
-						<input type="email" name="email" placeholder="Email" required>
-					</div>
-					<div class="cart-page__input">
-						<textarea name="comment" placeholder="Комментарий"></textarea>
-					</div>
-					<button type="submit"  class="cart-page__button">Оформить</button>
- </form>
-<!--  onclick="Order.saveButton(event)" -->			</div>
-			<div class="cart-page__content">
-				<div class="cart-page__items"></div>
-				<button class="cart-page__destroy" onclick="cartLS.destroy()">
-					Очистить корзину
-				</button>
-				<table id="totals" class="table">
-					<tbody>
-						<tr class="subtotal">
-							<td class="name subtotal"><strong>Количество:</strong></td>
-							<td class="tcount"><span></span> шт</td>
-						</tr>
-						<tr class="subtotal">
-							<td class="name subtotal"><strong>Позиций:</strong></td>
-							<td class="tpos"> </td>
-						</tr>
-						<tr class="subtotal">
-							<td class="name subtotal"><strong>Итого:</strong></td>
-							<td class="price"><span></span> ₸</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-
-		<div class="order-success">
-			Ваш заказ оформлен
-		</div>
-
-		<div class="order-empty">
-			В корзине нет товаров.
-		</div>
-	</div>
-</section>
-
-<section></section>        </div>
-
-        <!-- Scripts -->
-        <script src="https://kazshintorg1.kz/themes/demo/assets/vendor/jquery.js"></script>
+<!-- Scripts -->
+<script src="https://kazshintorg1.kz/themes/demo/assets/vendor/jquery.js"></script>
 <script src="https://kazshintorg1.kz/themes/demo/assets/vendor/bootstrap.js"></script>
 <script src="https://kazshintorg1.kz/themes/demo/assets/js/libs/jquery.maskedinput.js"></script>
 <script src="https://kazshintorg1.kz/themes/demo/assets/js/libs/swiper-bundle.min.js"></script>
 <script src="https://kazshintorg1.kz/themes/demo/assets/js/libs/fancybox.umd.js"></script>
 <script src="https://kazshintorg1.kz/themes/demo/assets/js/cart-localstorage.min.js"></script>
 <script src="https://kazshintorg1.kz/combine/ae9a0975de109f10e667d468a5db84b9-1743846882"></script>
-<script src="https://kazshintorg1.kz/combine/67f56763633aae2d20651c01fbb4b9d8-1742034314"></script>        <script src="/modules/system/assets/js/framework.js"></script>
+<script src="https://kazshintorg1.kz/combine/67f56763633aae2d20651c01fbb4b9d8-1742034314"></script>
+<script src="/modules/system/assets/js/framework.js"></script>
 <script src="/modules/system/assets/js/framework.extras.js"></script>
-<link rel="stylesheet" property="stylesheet" href="/modules/system/assets/css/framework.extras.css">
+<link rel="stylesheet" href="/modules/system/assets/css/framework.extras.css">
+
+<!-- Добавляем скрипт для передачи корзины -->
+<script>
+  function attachCartItems(form) {
+    const items = cartLS.list();
+    document.getElementById('items_json').value = JSON.stringify(items);
+    return true;
+  }
+</script>
+<script>
+  function updateCartDisplay() {
+    const items = cartLS.list();
+    const container = document.getElementById('cartItemsContainer');
+    const totalCountEl = document.querySelector('.tcount span');
+    const totalPosEl = document.querySelector('.tpos');
+    const totalPriceEl = document.querySelector('.price span');
+
+    container.innerHTML = '';
+    let totalCount = 0;
+    let totalPrice = 0;
+
+    if (items.length === 0) {
+      document.querySelector('.order-empty').style.display = 'block';
+      totalCountEl.textContent = '0';
+      totalPosEl.textContent = '0';
+      totalPriceEl.textContent = '0';
+      return;
+    } else {
+      document.querySelector('.order-empty').style.display = 'none';
+    }
+
+    items.forEach(item => {
+      totalCount += item.quantity;
+      totalPrice += item.quantity * item.price;
+
+      const itemDiv = document.createElement('div');
+      itemDiv.className = 'cart-item d-flex align-items-center justify-content-between mb-3 p-2 border rounded';
+
+      const itemId = JSON.stringify(item.id); // безопасно сериализуем id
+
+      itemDiv.innerHTML = `
+          <div class="d-flex align-items-center gap-3">
+            <img src="${item.img || ''}" alt="${item.name}" style="width: 80px; height: 80px; object-fit: contain;">
+            <div>
+              <strong>${item.name}</strong><br>
+              <small>${item.price} ₸</small>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <input type="number" min="1" value="${item.quantity}" class="form-control form-control-sm w-auto"
+              onchange="cartLS.quantity('${item.id}', this.value); updateCartDisplay();">
+            <button class="btn btn-danger btn-sm" onclick="cartLS.remove('${item.id}'); updateCartDisplay();">Удалить</button>
+          </div>
+        `;
+
+      container.appendChild(itemDiv);
+    });
+
+    totalCountEl.textContent = totalCount;
+    totalPosEl.textContent = items.length;
+    totalPriceEl.textContent = totalPrice.toLocaleString();
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (typeof cartLS !== 'undefined') {
+      updateCartDisplay();
+    } else {
+      console.error('cartLS is not defined. Проверь, подключён ли cart-localstorage.min.js');
+    }
+  });
+</script>
+
+
 {% endblock %}

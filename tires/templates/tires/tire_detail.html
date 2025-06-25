@@ -1,0 +1,59 @@
+{% extends 'tires/base.html' %}
+{% block content %}
+<div class="container py-4">
+  <h2>{{ tire.width }}/{{ tire.height }}R{{ tire.diameter }} {{ tire.brand }}</h2>
+  <hr>
+  <div class="row">
+    <!-- Фотография -->
+    <div class="col-md-5">
+      {% if tire.image %}
+        <img src="{{ tire.image.url }}" class="img-fluid" alt="{{ tire }}">
+      {% else %}
+        <div class="bg-light d-flex justify-content-center align-items-center" style="height: 300px;">
+          <span class="text-muted">[Нет фото]</span>
+        </div>
+      {% endif %}
+    </div>
+
+    <!-- Характеристики -->
+    <div class="col-md-4">
+      <h5 class="mb-3">Характеристики:</h5>
+      <ul class="list-unstyled">
+        <li><strong>Сезон:</strong> {{ tire.get_season_display }}</li>
+        <li><strong>Бренд:</strong> {{ tire.brand }}</li>
+        <li><strong>Ширина:</strong> {{ tire.width }} мм</li>
+        <li><strong>Высота:</strong> {{ tire.height }} мм</li>
+        <li><strong>Диаметр:</strong> {{ tire.diameter }} дюймов</li>
+        {% if tire.description %}
+        <li><strong>Назначение:</strong> {{ tire.description }}</li>
+        {% endif %}
+      </ul>
+    </div>
+
+    <!-- Корзина -->
+    <div class="col-md-3">
+      <h5>Цена:</h5>
+
+
+      <h4 class="text-success fw-bold">{{ tire.price }} ₸</h4>
+
+      <form method="post" action="{% url 'add_to_cart' tire.id %}">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+          <input type="number" name="quantity" value="1" min="1" max="{{ tire.stock }}" class="form-control">
+        </div>
+        <button class="btn btn-success"
+            onclick="cartLS.add({
+              id: '{{ tire.id }}',
+              name: '{{ tire.brand }} {{ tire.width }}/{{ tire.height }} R{{ tire.diameter }}',
+              price: {{ tire.price }},
+              img: '{{ tire.image.url }}',
+              quantity: 1
+            })">
+          В корзину
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

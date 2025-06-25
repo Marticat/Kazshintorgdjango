@@ -1,31 +1,85 @@
-
 {% extends 'tires/base.html' %}
 {% load static %}
 
 {% block content %}
+<div class="container py-4">
+  <h1 class="mb-4">Легковые шины</h1>
+  <div class="row">
 
-<h1>Легковые шины</h1>
+    <!-- Левая колонка с фильтрами -->
+    <div class="col-md-3">
+      <form method="get" class="filters">
+        <div class="filter-block mb-4">
+          <h5 class="mb-2">По сезону</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="season" id="season1" value="summer" {% if request.GET.season == 'summer' %}checked{% endif %}>
+            <label class="form-check-label" for="season1">Летние</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="season" id="season2" value="allseason" {% if request.GET.season == 'allseason' %}checked{% endif %}>
+            <label class="form-check-label" for="season2">Всесезонные</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="season" id="season3" value="winter" {% if request.GET.season == 'winter' %}checked{% endif %}>
+            <label class="form-check-label" for="season3">Зимние</label>
+          </div>
+        </div>
 
-<p>Найдено шин: {{ tires|length }}</p>
+        <div class="filter-block mb-4">
+          <h5 class="mb-2">По параметрам</h5>
+          <label class="form-label">Ширина</label>
+          <input type="number" name="width" class="form-control mb-2" value="{{ request.GET.width }}">
 
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
-  {% for tire in tires %}
-    <div style="border: 1px solid #ccc; padding: 10px;">
-        {% if tire.image %}
-          <img src="{{ tire.image.url }}" alt="{{ tire }}" style="max-width: 100%;">
-        {% else %}
-          <p>[нет фото]</p>
-        {% endif %}
-      <h3>{{ tire.brand }}</h3>
-      <p>{{ tire.width }}/{{ tire.height }} R{{ tire.diameter }}</p>
-      <p>Сезон: {{ tire.get_season_display }}</p>
-      <p>Цена: {{ tire.price }} ₸</p>
+          <label class="form-label">Высота</label>
+          <input type="number" name="height" class="form-control mb-2" value="{{ request.GET.height }}">
+
+          <label class="form-label">Диаметр</label>
+          <input type="number" name="diameter" class="form-control" value="{{ request.GET.diameter }}">
+        </div>
+
+        <div class="filter-block mb-4">
+          <h5 class="mb-2">По бренду</h5>
+          <input type="text" name="search" class="form-control" placeholder="Например, Cordiant" value="{{ request.GET.search }}">
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mb-2">Фильтровать</button>
+        <a href="{% url 'light' %}" class="btn btn-outline-secondary w-100">Сбросить</a>
+      </form>
     </div>
-  {% endfor %}
+
+<!-- Правая колонка с товарами -->
+    <div class="col-md-9">
+      <p>Найдено шин: <strong>{{ tires|length }}</strong></p>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for tire in tires %}
+        <div class="col">
+          <a href="{% url 'tire_detail' tire.id %}" class="text-decoration-none text-dark">
+            <div class="card h-100 shadow-sm text-center">
+              {% if tire.image %}
+                <img src="{{ tire.image.url }}" class="card-img-top p-3" style="height: 220px; object-fit: contain;" alt="{{ tire }}">
+              {% else %}
+                <div class="bg-light d-flex justify-content-center align-items-center" style="height: 200px;">
+                  <span class="text-muted">[Нет фото]</span>
+                </div>
+              {% endif %}
+              <div class="card-body">
+                <h6 class="card-title">{{ tire.brand }}</h6>
+                <p class="mb-1">{{ tire.width }}/{{ tire.height }} R{{ tire.diameter }}</p>
+                <p class="mb-1 text-muted">{{ tire.get_season_display }}</p>
+                <p class="fw-bold text-success">{{ tire.price }} ₸</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+
+      {% if not tires %}
+        <div class="alert alert-warning mt-4">Нет шин по выбранным параметрам.</div>
+      {% endif %}
+    </div>
+  </div>
 </div>
-
-{% if not tires %}
-  <p>Нет шин в этой категории.</p>
-{% endif %}
-
 {% endblock %}
